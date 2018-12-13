@@ -1,0 +1,88 @@
+﻿<Window x:Class="Example.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance local:Mwvm}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+            <Label
+                DockPanel.Dock="Top"
+                Content="From string:"/>
+            <TextBox
+                DockPanel.Dock="Top"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                MinWidth="150"
+                Margin="5,5,5,5"
+                Text="{Binding StringInput}"/>
+            <Button
+                DockPanel.Dock="Top"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Content="Count Hash"
+                MinWidth="150"
+                Margin="5,5,5,5"
+                Command="{Binding CalculateStringHashCommand}"/>
+            <TextBox
+                DockPanel.Dock="Top"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                MinWidth="150"
+                Margin="5,5,5,5"
+                BorderBrush="White"
+                Text="{Binding StringHash}"/>
+        </DockPanel>
+        <DockPanel
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+               Grid.Column="1">
+            <Label
+                    DockPanel.Dock="Top"
+                    Content="From file:"/>
+            <DockPanel
+                DockPanel.Dock="Top"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                MinWidth="150"
+                Margin="5,5,5,5"
+                Height="20">
+                <Label
+                    DockPanel.Dock="Left"
+                    Content="{Binding FileName}"
+                    MaxWidth="100"/>
+                <Button
+                    DockPanel.Dock="Right"
+                    Content="Select file"
+                    HorizontalAlignment="Right"
+                    Command="{Binding SelectFile}"/>
+            </DockPanel>
+            <Button
+                    DockPanel.Dock="Top"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Content="Count Hash"
+                    MinWidth="150"
+                    Margin="5,5,5,5"
+                Command="{Binding CalculateFileHashCommand}"/>
+            <TextBox
+                    DockPanel.Dock="Top"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    MinWidth="150"
+                    Margin="5,5,5,5"
+                BorderBrush="White"
+                Text="{Binding FileHash}"/>
+        </DockPanel>
+    </Grid>
+</Window>
