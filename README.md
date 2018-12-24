@@ -9,9 +9,9 @@ using Daquga.Security.Cryptography;
 ```c# 
 var hash = CRC32.FromString("123456789");
 ```
-Получение хеша из файла:
+#### Получение хеша из файла:
 ```c# 
 var hash = CRC32.FromFile(FileInput);
 ```
 
-  Для лучшего понимания рекомендуется открыть и изучить проект  **Example**
+>Для лучшего понимания рекомендуется открыть и изучить проект  [**Example**](https://github.com/DanyaSWorlD/CRC32/tree/master/Example) 
